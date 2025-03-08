@@ -1,20 +1,21 @@
 :root {
   --black: #141414;
   --white: #ffffff;
-  --background: #e5e5e5;
+  --background: #363636;
   --primary: #14213d;
   --secondary: #fca311;
 }
 
-body{
+body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--background);
-  color: var(--black);
+  color: var(--white);
+  text-shadow: 0px 0px 3px rgb(0, 0, 0);
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 main {
@@ -26,15 +27,59 @@ footer {
   background-color: var(--black);
   color: var(--background);
   padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
 }
 
 #authors-list {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  padding: 0;
 }
 
 #authors-list li {
   margin: 0.5em;
+  padding: 1em;
+  color: white;
+}
+#flex-direction , #flex-wrap , #justify-content , #align-items ,#align-content {
+  border: 3px solid black;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 
+  -0.75px -0.75px 0 black,  
+   0.75px -0.75px 0 black,  
+  -0.75px  0.75px 0 black,  
+   0.75px  0.75px 0 black;  
+}
+.controls {
+  margin: 10px 0;
+}
+.controls button {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  background-color: #141414;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #0056b3;
+}
+
+#header {
+  background-color: rgb(18, 18, 19);
+  color: rgb(255, 255, 255)  ;
+  padding: 1em;
+  text-align: center;
+  text-shadow: 0px 0px 2px rgb(255, 255, 255);
 }

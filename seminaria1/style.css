@@ -6,16 +6,30 @@
   --secondary: #fca311;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
   background-color: var(--background);
   color: var(--white);
-  text-shadow: 0px 0px 3px rgb(0, 0, 0);
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+header {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1em;
+  text-align: center;
 }
 
 main {
@@ -30,7 +44,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center; 
-  height: 100vh;
 }
 
 #authors-list {
@@ -44,42 +57,65 @@ footer {
   padding: 1em;
   color: white;
 }
-#flex-direction , #flex-wrap , #justify-content , #align-items ,#align-content {
-  border: 3px solid black;
+
+section {
   background-color: #f0f0f0;
-  padding: 20px;
+  color: black;
+  padding: 1em;
   border-radius: 10px;
-  width: 400px;
   margin: 20px auto;
   text-align: center;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-  text-shadow: 
-  -0.75px -0.75px 0 black,  
-   0.75px -0.75px 0 black,  
-  -0.75px  0.75px 0 black,  
-   0.75px  0.75px 0 black;  
 }
+
 .controls {
-  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
 }
-.controls button {
-  padding: 8px 12px;
-  margin: 5px;
+
+button {
+  padding: 1.2em;
+  margin: 0 0.5em;
   border: none;
-  background-color: #141414;
-  color: rgb(255, 255, 255);
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "Press Start 2P", system-ui;
+  font-style: italic;
+  font-weight: lighter;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .controls button:hover {
-  background-color: #0056b3;
+  background-color: var(--secondary);
 }
 
-#header {
-  background-color: rgb(18, 18, 19);
-  color: rgb(255, 255, 255)  ;
-  padding: 1em;
-  text-align: center;
-  text-shadow: 0px 0px 2px rgb(255, 255, 255);
+.flex-container{
+  display: flex;
+  min-height: 20vh;
+  position: relative;
 }
+
+.flex-item{
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 20px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+  align-content: center;
+  font-size: 3em;
+  min-width: 200px;  
+}
+
+#align-content > .flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  height: 50vh;
+}
+
+/* For align-items demo */
+.small { height: 50px; }
+.medium { height: 100px; }
+.large { height: 150px; }
+.huge { height: 200px; }

@@ -1,0 +1,39 @@
+:root {
+  --black: #141414;
+  --white: #ffffff;
+  --background: #e5e5e5;
+  --primary: #14213d;
+  --secondary: #fca311;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 1em;
+}
+
+footer {
+  background-color: var(--black);
+  color: var(--background);
+  padding: 1em;
+}
+
+#authors-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#authors-list li {
+  margin: 0.5em;
+}

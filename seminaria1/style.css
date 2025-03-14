@@ -1,20 +1,35 @@
 :root {
   --black: #141414;
   --white: #ffffff;
-  --background: #e5e5e5;
+  --background: #363636;
   --primary: #14213d;
   --secondary: #fca311;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
   background-color: var(--background);
-  color: var(--black);
+  color: var(--white);
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+header {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1em;
+  text-align: center;
 }
 
 main {
@@ -26,6 +41,9 @@ footer {
   background-color: var(--black);
   color: var(--background);
   padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
 #authors-list {
@@ -36,4 +54,68 @@ footer {
 
 #authors-list li {
   margin: 0.5em;
+  padding: 1em;
+  color: white;
 }
+
+section {
+  background-color: #f0f0f0;
+  color: black;
+  padding: 1em;
+  border-radius: 10px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+}
+
+button {
+  padding: 1.2em;
+  margin: 0 0.5em;
+  border: none;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "Press Start 2P", system-ui;
+  font-style: italic;
+  font-weight: lighter;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: var(--secondary);
+}
+
+.flex-container{
+  display: flex;
+  min-height: 20vh;
+  position: relative;
+}
+
+.flex-item{
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 20px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+  align-content: center;
+  font-size: 3em;
+  min-width: 200px;  
+}
+
+#align-content > .flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  height: 50vh;
+}
+
+/* For align-items demo */
+.small { min-height: 50px; }
+.medium { min-height: 100px; }
+.large { min-height: 150px; }
+.huge { min-height: 200px; }

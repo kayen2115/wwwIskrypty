@@ -5,26 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Maciej Rybak, Mateusz Rybak, Maurycy Januszek, Patryk Pajerski, Szymon Leśniak, Szymon Manijak">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.webp" type="image/png">
-  <title>Display Flex</title>
+  <link rel="icon" href="favicon.gif" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Display Flex Showcase</title>
 </head>
 <body>
+  <header>
+    <h1>Flexbox Showcase</h1>
+    <p>An interactive demonstration of CSS display: flex properties</p>
+  </header>
   <main>
-    <div>ඞ</div>
-    <div>ඞ</div>
-    <div>ඞ</div>
-    <div>ඞ</div>
+  <section id="flex-direction">
+    <h3>Flex Direction</h3>
+    <div class="controls">
+      <button data-value="row">row</button>
+      <button data-value="row-reverse">row-reverse</button>
+      <button data-value="column">column</button>
+      <button data-value="column-reverse">column-reverse</button>
+    </div>
+    <div class="flex-container flex-direction-demo">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+    </div>
+  </section>
+
+  <section id="flex-wrap">
+    <h3>Flex Wrap</h3>
+    <div class="controls">
+      <button data-value="nowrap">nowrap</button>
+      <button data-value="wrap">wrap</button>
+      <button data-value="wrap-reverse">wrap-reverse</button>
+    </div>
+    <div class="flex-container flex-wrap-demo">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">5</div>
+      <div class="flex-item">6</div>
+      <div class="flex-item">7</div>
+      <div class="flex-item">8</div>
+      <div class="flex-item">9</div>
+    </div>
+  </section>
+
+  <section id="justify-content">
+    <h3>Justify Content</h3>
+    <div class="controls">
+      <button data-value="flex-start">flex-start</button>
+      <button data-value="flex-end">flex-end</button>
+      <button data-value="center">center</button>
+      <button data-value="space-between">space-between</button>
+      <button data-value="space-around">space-around</button>
+      <button data-value="space-evenly">space-evenly</button>
+    </div>
+    <div class="flex-container justify-content-demo">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+    </div>
+  </section>
+
+  <section id="align-items">
+    <h3>Align Items</h3>
+    <div class="controls">
+      <button data-value="flex-start">flex-start</button>
+      <button data-value="flex-end">flex-end</button>
+      <button data-value="center">center</button>
+      <button data-value="baseline">baseline</button>
+      <button data-value="stretch">stretch</button>
+    </div>
+    <div class="flex-container align-items-demo">
+      <div class="flex-item small">1</div>
+      <div class="flex-item medium">2</div>
+      <div class="flex-item large">3</div>
+      <div class="flex-item huge">4</div>
+    </div>
+  </section>
+
+  <section id="align-content">
+    <h3>Align Content</h3>
+    <div class="controls">
+      <button data-value="stretch">stretch</button>
+      <button data-value="flex-start">flex-start</button>
+      <button data-value="flex-end">flex-end</button>
+      <button data-value="center">center</button>
+      <button data-value="space-between">space-between</button>
+      <button data-value="space-around">space-around</button>
+      <button data-value="space-evenly">space-evenly</button>
+    </div>
+    <div class="flex-container align-content-demo">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">5</div>
+      <div class="flex-item">6</div>
+      <div class="flex-item">7</div>
+      <div class="flex-item">8</div>
+      <div class="flex-item">9</div>
+      <div class="flex-item">10</div>
+      <div class="flex-item">11</div>
+      <div class="flex-item">12</div>
+      <div class="flex-item">13</div>
+      <div class="flex-item">14</div>
+      <div class="flex-item">15</div>
+      <div class="flex-item">16</div>
+      <div class="flex-item">17</div>
+      <div class="flex-item">18</div>
+      <div class="flex-item">19</div>
+      <div class="flex-item">20</div>
+    </div>
+  </section>
+
   </main>
   <footer>
-    <p>authors:</p> 
     <ul id="authors-list">
       <li>Maciej Rybak</li>
       <li>Mateusz Rybak</li>
       <li>Maurycy Januszek</li>
-      <li>Patryk Pajerski</li>
       <li>Szymon Leśniak</li>
       <li>Szymon Manijak</li>
+      <li>Patryk Pajerski</li>
     </ul>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

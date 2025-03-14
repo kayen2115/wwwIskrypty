@@ -1,0 +1,191 @@
+:root {
+  --background: #fdfbee;
+  --primary: #57b4ba;
+  --secondary: #015551;
+  --accent: #fe4f2d;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  --s: 100px; /* control the size */
+  --c1: #1d1d1d;
+  --c2: #4e4f51;
+  --c3: #3c3c3c;
+
+  background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 180deg
+      )
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 180deg
+    );
+  background-size: var(--s) calc(var(--s) * 0.577);
+}
+
+header {
+  background-color: var(--primary);
+  color: var(--black);
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  flex: 1;
+  align-self: center;
+  padding: 1em;
+  width: 80%;
+}
+
+footer {
+  background-color: var(--secondary);
+  color: var(--white);
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+button:hover {
+  background-color: var(--secondary);
+  color: var(--accent);
+}
+
+.panel {
+  background-color: var(--background);
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+#dynamic-elements {
+  display: flex;
+  gap: 1em;
+}
+
+.menu-item{
+  background-color: var(--secondary);
+  color: var(--white);
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+#dynamic-width {
+  display: flex;
+  align-items: center;
+  margin: 0.5em;
+}
+
+#left {
+  background-color: var(--primary);
+  height: 100%;
+  min-height: 20px;
+  width: 49%;
+}
+
+#center {
+  background-color: var(--accent);
+  position: relative;
+  height: 100%;
+  min-height: 20px;
+  width: 2%;
+}
+
+#right {
+  background-color: var(--secondary);
+  height: 100%;
+  min-height: 20px;
+  width: 49%;
+}
+
+#game {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+  margin-top: 1rem;
+}
+
+#field {
+  width: 50%; 
+  max-width: min(50vh, 50vw); 
+  aspect-ratio: 1/1; 
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  border: 0.1rem solid;
+  gap: 0;
+  margin-left: 10rem;
+}
+
+.cell {
+  background-color: var(--primary);
+  border-right: 0.1rem solid;
+  border-bottom: 0.1rem solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell:nth-child(10n) {
+  border-right: none;
+}
+
+.cell:nth-child(n+91):nth-child(-n+100) {
+  border-bottom: none;
+}
+
+.selected {
+  background-color: var(--accent);
+}
+
+.pawn {
+  background-image: url('pawn.png');
+  background-size: contain;
+  width: 80%;
+  height: 80%;
+}

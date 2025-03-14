@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>jQuerry</title>
+  </head>
+  <body>
+    <header>
+      <h1>jQuery vs JS ES6 - DOM manipulation</h1>
+    </header>
+    <main>
+      <div class="panel">
+        <h3>Hide this element</h3>
+        <p>click the button to hide this section but beware! <i>there is no coming back...</i></p>
+        <div class="controls">
+          <button id="hide-me">Click Me</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Dynamic creation</h3>
+        <p>choose number of items</p>
+        <div id="dynamic-elements">
+          <div class="controls">
+            <input type="number" id="amount" min="0" />
+            <button id="create-elements">Create Items</button>
+            <button id="delete-elements">Delete Items</button>
+          </div>
+          <div id="elements"></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Dynamic width</h3>
+        <p>click and drag middle element to change the width</p>
+        <div id="dynamic-width">
+          <div id="left"></div>
+          <div id="center"></div>
+          <div id="right"></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Simple game</h3>
+        <p>click on the board to start tracing a path</p>
+        <div id="game">
+          <div class="controls">
+            <button id="start">Start Game</button>
+            <button id="move">Next Move</button>
+            <button id="reset">Reset</button>
+          </div>
+          <div id="field"></div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Authors: Maciej Rybak, Mateusz Rybak, Maurycy Januszek, Patryk Pajerski,
+        Szymon Leśniak, Szymon Manijak
+      </p>
+    </footer>
+  </body>
 </html>

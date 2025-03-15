@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
   // hide/show element
   $("#hide-me").on("click", function () {
@@ -123,5 +126,29 @@ $(document).ready(function () {
     currentIndex = 0;
     $(".cell").removeClass("selected lastselected");
     $("#pawn").remove();
+  });
+  $("#auto").on("click", function () {
+    if (path.length > 0) {
+      const startCell = path[0];
+      $(`#cell-${startCell[0]}-${startCell[1]}`).append(pawn);
+      game = true;
+      async function loopWithDelay(){
+        for(let i = 0; i < path.length - 1; i++){
+          await delay(200);
+          if (currentIndex < path.length - 1) {
+            currentIndex++;
+            const nextCell = path[currentIndex];
+            $(`#cell-${nextCell[0]}-${nextCell[1]}`).append(pawn);
+          
+          } 
+          await delay(500);
+        }
+        if(currentIndex == path.length - 1) {
+          alert("Pawn has reached the end of the path!");
+        }
+      }
+      loopWithDelay()
+    }
+    
   });
 });

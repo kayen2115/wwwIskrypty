@@ -3,6 +3,16 @@ $(document).ready(function () {
   // hide/show element
   $("#hide-me").on("click", function () {
     $(this).parent().parent().fadeToggle();
+    setTimeout(()=>{
+      $(".goback").fadeToggle().css("display","flex");
+    },1000)
+  });
+
+  $("#go-back").on("click", function () {
+    $(this).parent().fadeToggle();
+    setTimeout(()=>{
+      $("#hide").fadeToggle();
+    },1000)
   });
 
   // dynamic elements
@@ -62,15 +72,18 @@ $(document).ready(function () {
         .on("click", function () {
           if (path.length == 0) {
             path.push([i, j]);
-            $(this).addClass("selected");
+            $(this).addClass("lastselected");
           } else {
             // check if the cell is adjacent to the last cell in the path
             let last = path[path.length - 1];
             if (Math.abs(last[0] - i) <= 1 && Math.abs(last[1] - j) <= 1) {
               path.push([i, j]);
-              $(this).addClass("selected");
+              $(".lastselected").addClass("selected")
+              $(".lastselected").removeClass("lastselected")
+              $(this).addClass("lastselected");
             }
           }
+
         });
       $("#field").append(cell);
     }
@@ -79,29 +92,36 @@ $(document).ready(function () {
   const pawn = $("<div>").addClass("pawn").attr("id", "pawn");
   let currentIndex = 0;
 
+  let game = false;
   $("#start").on("click", function () {
     if (path.length > 0) {
       const startCell = path[0];
       $(`#cell-${startCell[0]}-${startCell[1]}`).append(pawn);
+      game = true;
     } else {
-      alert("Please select a path");
+      alert("Please select a path!");
     }
   });
 
   $("#move").on("click", function () {
+    if (!game){
+      alert("Start the game first!");
+      return;
+    }
     if (currentIndex < path.length - 1) {
       currentIndex++;
       const nextCell = path[currentIndex];
       $(`#cell-${nextCell[0]}-${nextCell[1]}`).append(pawn);
     } else {
-      alert("Pawn has reached the end of the path");
+      alert("Pawn has reached the end of the path!");
     }
   });
 
   $("#reset").on("click", function () {
+    game = false;
     path = [];
     currentIndex = 0;
-    $(".cell").removeClass("selected");
+    $(".cell").removeClass("selected lastselected");
     $("#pawn").remove();
   });
 });

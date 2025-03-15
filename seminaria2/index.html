@@ -19,9 +19,12 @@
       <h1>jQuery vs JS ES6 - DOM manipulation</h1>
     </header>
     <main>
-      <div class="panel">
+      <div class="goback">
+        <button id="go-back">Fuck go back!</button>
+      </div>
+      <div class="panel" id="hide">
         <h3>Hide this element</h3>
-        <p>click the button to hide this section but beware! <i>there is no coming back...</i></p>
+        <p>click the button to hide this section but beware!</p>
         <div class="controls">
           <button id="hide-me">Click Me</button>
         </div>
@@ -31,7 +34,7 @@
         <p>choose number of items</p>
         <div id="dynamic-elements">
           <div class="controls">
-            <input type="number" id="amount" min="0" />
+            <input type="number" id="amount" min="0" placeholder="Enter a number" />
             <button id="create-elements">Create Items</button>
             <button id="delete-elements">Delete Items</button>
           </div>

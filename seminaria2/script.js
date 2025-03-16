@@ -151,16 +151,6 @@ $(document).ready(function () {
     }
     
   });
-  // guzik
-  $("#stoch").on("click",function() {
-    let imageUrl = "favicon.gif"; 
-  let newWindow = window.open("", "_blank");
-  newWindow.document.write(`<img src="${imageUrl}" style="width: 80%;">`);
-  });
-
-  $("#flip").click(function() {
-    $("#roz").slideDown();
-  });
 
 });
 

@@ -251,3 +251,16 @@ input[type=number] {
   padding: 1em;
   margin-bottom: 1em;
 }
+#roz, #flip {
+  padding: 5px;
+  text-align: center;
+}
+
+#roz {
+  padding: 50px;
+  display: none;
+}
+.imgsetup{
+  max-width: 90%;
+  align-items: center;
+}

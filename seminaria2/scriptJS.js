@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("hide-me").addEventListener("click", function () {
     let parentElement = this.parentElement.parentElement;
     parentElement.style.transition = "opacity 1s";
-    parentElement.style.opacity =
-      parentElement.style.opacity === "0" ? "1" : "0";
+    parentElement.style.display =
+      parentElement.style.display === "none" ? "flex" : "none";
     setTimeout(() => {
       let goBack = document.querySelector(".goback");
       goBack.style.display = goBack.style.display === "flex" ? "none" : "flex";
@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
       hideElement.style.display =
         hideElement.style.display === "none" ? "block" : "none";
       hideElement.style.opacity = hideElement.style.opacity === "1" ? "0" : "1";
+    }, 1000);
+    this.parentElement.style.display = "none";
+    setTimeout(() => {
+      document.getElementById("hide").style.display = "block";
     }, 1000);
   });
 

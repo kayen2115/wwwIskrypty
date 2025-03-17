@@ -1,7 +1,7 @@
 :root {
     --black: #141414;
     --white: #ffffff;
-    --background: #363636;
+    --background: #DCD7C9;
     --primary: #14213d;
     --secondary: #fca311;
   }
@@ -10,6 +10,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-size: larger;
+    /* font-weight: <weight>; */
+    font-style: normal;
   }
 
   header {

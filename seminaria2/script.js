@@ -129,9 +129,11 @@ $(document).ready(function () {
   });
   $("#auto").on("click", function () {
     if (path.length > 0) {
+      if(path[currentIndex] == path[0]){
       const startCell = path[0];
       $(`#cell-${startCell[0]}-${startCell[1]}`).append(pawn);
       game = true;
+    }
       async function loopWithDelay(){
         for(let i = 0; i < path.length - 1; i++){
           await delay(200);

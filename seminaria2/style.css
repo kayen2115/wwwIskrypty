@@ -47,6 +47,27 @@ header {
   justify-content: center;
   align-items: center;
 }
+.menu{
+  overflow: hidden;
+  background-color: #000000;
+}
+.menu #pozycje{
+  display: none;
+}
+.menu a{
+  background-color: #015551;
+  color: #fe4f2d;
+  font-size: 15px;
+  display: block;
+}
+.menu a.icon{
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 
 main {
   flex: 1;

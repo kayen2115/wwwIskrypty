@@ -2,7 +2,6 @@ $(document).ready(function () {
   function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
   // hide/show element
   $("#hide-me").on("click", function () {
     $(this).parent().parent().fadeToggle();

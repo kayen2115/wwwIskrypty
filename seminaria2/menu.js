@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("burger").addEventListener("click",rozsuwanie)
+    document.getElementById("burger").addEventListener("mouseover",rozsuwanie)
     function rozsuwanie() {
-    var x = document.getElementById("pozycje");
-    console.log("cpsw")
-    if (x.style.display === "block") {
-      x.style.display = "none";
+    var menu = document.getElementById("burger")
+    var pozycje = document.getElementById("pozycje");
+    if (pozycje.style.display === "block") {
+      menu.style.display ="block";
+      pozycje.style.display = "none";
     } else {
-      x.style.display = "block";
+      pozycje.style.display = "block";
+      menu.style.display ="none"
     }
   }
-  document.getElementById("burger").addEventListener("click",rozsuwanie)
+  document.getElementById("pozycje").addEventListener("mouseleave",rozsuwanie)
 })

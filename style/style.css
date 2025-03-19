@@ -14,7 +14,7 @@
   box-sizing: border-box;
   font-family: "Caveat", cursive;
   font-optical-sizing: auto;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   font-style: normal;
 }
 
@@ -34,7 +34,7 @@ body, html {
   width: 100%;
 
   background-color: var(--secondary);
-  background-image: url("car_bg.jpg");
+  background-image: url("../resources/car_bg.jpg");
   background-size: cover;
 
   /* background: #f1f1f1; */

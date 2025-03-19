@@ -38,19 +38,25 @@ body {
       var(--c3) 0 180deg);
   background-size: var(--s) calc(var(--s) * 0.577);
 }
-
-.menu {
+.top{
   background-color: var(--primary);
   color: var(--black);
-  padding: 3em;
+  padding: 1em;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+}
+.menu {
   overflow: hidden;
 }
 
 .menu #pozycje{
   display: none;
+  position: absolute;
+  right: 1em;
+  width: 100%;
+  max-width: 200px;
+  
 }
 .menu a{
   background-color: var(--primary);
@@ -62,6 +68,7 @@ body {
 .menu a:hover{
   background-color: var(--secondary);
   color: black;
+ 
 }
 .menu a.icon{
   background: black;

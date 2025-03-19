@@ -1,0 +1,65 @@
+:root {
+  --black: #000;
+  --white: #ffffff;
+  --background: #dcd7c9;
+  --main-background: #b8b8b8;
+  --primary: #3f4f44;
+  --secondary: #2c3930;
+  --accent: #a27b5c;
+}
+
+body {
+  background-color: var(--secondary);
+}
+
+main {
+  background-color: var(--background);
+  background-image: url('/resources/car_bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.ppanel{
+  height: 600px;
+}
+
+.navbar {
+  background-color: var(--primary) !important;
+}
+
+.navbar-brand, .nav-link {
+  color: var(--white) !important;
+}
+
+.dropdown-menu {
+  background-color: var(--secondary);
+}
+
+.dropdown-item {
+  color: var(--white);
+}
+
+.dropdown-item:hover {
+  background-color: var(--accent);
+}
+
+.footer {
+  background-color: var(--secondary) !important;
+  color: var(--white) !important;
+}
+
+/* For custom colored buttons */
+.btn-custom-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-custom-accent {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+/* For container background */
+.bg-custom-main {
+  background-color: var(--main-background);
+}

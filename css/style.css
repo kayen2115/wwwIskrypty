@@ -21,7 +21,7 @@ main {
 
 
 .bg-main {
-  background-color: var(--main-background);
+  background-color: var(--background);
 }
 
 .navbar {

@@ -19,8 +19,9 @@ main {
   background-attachment: fixed;
 }
 
-.ppanel{
-  height: 600px;
+
+.bg-main {
+  background-color: var(--main-background);
 }
 
 .navbar {

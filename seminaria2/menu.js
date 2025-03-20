@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("burger").addEventListener("mouseover",rozsuwanie)
-    function rozsuwanie() {
+    document.getElementById("burger").addEventListener("mouseover",rozsuwaniemenu)
+    function rozsuwaniemenu() {
     var menu = document.getElementById("burger")
     var pozycje = document.getElementById("pozycje");
     if (pozycje.style.display === "block") {

@@ -14,14 +14,34 @@
     <main class="container-fluid w-75 mt-4 flex-grow-1">
         <div class="card p-4 bg-secondary">
             <div class="input-group mb-3 gap-2 p-2 m-2">
-                <input type="text" class="form-control rounded-pill" placeholder="Wpisz coś..." style="height: 40px;">
+                <input type="text" id="file-url" class="form-control rounded-pill" placeholder="Wpisz coś..." style="height: 40px;">
                 <div class="d-flex gap-2">
-                    <button class="btn btn-dark rounded-pill" style="height: 40px; width: 100px;">GUZik</button>
-                    <button class="btn btn-dark rounded-pill" style="height: 40px; width: 100px;">GUZik2</button>
+                    <button class="btn btn-dark rounded-pill" style="height: 40px; width: 100px;" onclick="downloadFile()">GUZik</button>
+                    <button class="btn btn-dark rounded-pill" style="height: 40px; width: 100px;" onclick="">GUZik2</button>
                 </div>
             </div>
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       function downloadFile() {
+            console.log("download");
+            const url = document.getElementById('file-url').value; //pobranie url pola input
+            const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
+            fetch(proxyUrl + url) // fetch aby pobrać plik z danego adresu
+                .then(response => response.blob()) // kowersja na rep binarną
+                .then(blob => {
+                    const downloadUrl = window.URL.createObjectURL(blob); // adres URL do pobrania pliku 
+                    const a = document.createElement('a'); // tworzy nowy element 
+                    a.href = downloadUrl; // przypisuje mu podany link
+                    a.download = url.split('/').pop(); // podział url na części, pop ostatni element, 
+                    document.body.appendChild(a); // dodaje element do strony
+                    a.click(); // kliknięcia -> rozpoczęcie pobierana 
+                    window.URL.revokeObjectURL(downloadUrl); // zwalnia zasoby z downloadUrl
+                })
+                .catch(error => console.error('Błąd pobierania pliku:', error));
+        }
+    </script>
 </body>
 </html>

@@ -1,18 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Maciej Rybak, Mateusz Rybak, Maurycy Januszek, Patryk Pajerski, Szymon Leśniak, Szymon Manijak">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <link rel="icon" href="favicon.gif" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <title>Display Flex Showcase</title>
+  <style>
+    html, body {
+        height: 100%;
+        
+    }
+    #flex-item{
+      flex-direction: row;
+    }
+    button:hover{
+      cursor: pointer;
+      background-color: #0d6efd !important;
+      color:aliceblue !important  ;
+    }
+    body {
+    font-family: 'Merriweather', cursive !important;
+    }
+    :root {
+
+    --bs-danger: #ab6bff;
+    }
+    #flex-item{
+      flex-direction: column ;
+      justify-content: center; 
+    }
+    @media (max-width: 576px) {
+    .flex-direction-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    @media (max-width: 768px) {
+    .container {
+        width: 100%;
+      }
+    }
+  }
+
+    </style> 
 </head>
 <body>
-  <header>
+<div class="container-fluid bg-secondary" style="min-height: 100%;">
+  <div class="jumbotron jumbotron-fluid text-light text-center">
+    <div class="container bg-secondary ">
+      <h1 class="display-4 border p-3 text-center w-100">Flexbox Showcase</h1>
+      <p class="lead">An interactive demonstration of CSS display: flex properties</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row bg-light w-100 py-3 rounded shadow mx-auto">
+      <d id="flex-direction" class="text-center">
+        <h3 class="w-100 text-center fs-4 bg-primary text-white py-4 rounded">  
+          <b>Flex Direction</b>
+        </h3>
+        <div id="flex-button" class="container flex-sm-row d-flex justify-content-around flex-row gap-2 mb-4 fs-2">
+          
+          <div class="row d-flex gap-2 ms-3 w-100" >
+            <button data-value="row" class="row h-50 flex-direction-btn list-group-item list-group-item-action border border-dark rounded">row</button>
+            <button data-value="row-reverse" class="row h-50 flex-direction-btn list-group-item list-group-item-action border border-dark rounded">row-reverse</button>
+          </div>
+
+          <div class="row d-flex gap-2 ms-3 w-100">
+            <button data-value="column" class="row h-50 flex-direction-btn list-group-item list-group-item-action border border-dark rounded">column</button>
+            <button data-value="column-reverse" class="row h-50 flex-direction-btn  list-group-item list-group-item-action border border-dark rounded">column-reverse</button>
+          </div>
+        </div>
+  
+        <ul id="flex-container" class="container d-flex flex-row flex-md-row flex-column fs-3 fs-sm-5">
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">1</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">2</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">3</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">4</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">5</li>
+        </ul>
+      </d iv>
+    </div>
+  </div>
+    <div class="row">
+    </div>
+    <div class="row">
+    </div>
+  </div>
+</div>
+
+
+  <!-- <header>
     <h1>Flexbox Showcase</h1>
     <p>An interactive demonstration of CSS display: flex properties</p>
   </header>
@@ -110,7 +194,88 @@
       <div class="flex-item">8</div>
       <div class="flex-item">9</div>
       <div class="flex-item">10</div>
-      <div class="flex-item">11</div>
+      <div class="flex-item"<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Maciej Rybak, Mateusz Rybak, Maurycy Januszek, Patryk Pajerski, Szymon Leśniak, Szymon Manijak">
+  <title>Display Flex Showcase</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="text-center p-4 bg-primary text-white">
+    <h1>Flexbox Showcase</h1>
+    <p>An interactive demonstration of CSS display: flex properties</p>
+  </header>
+  <main class="container my-4">
+    
+    <section id="flex-direction" class="mb-4">
+      <h3>Flex Direction</h3>
+      <div class="btn-group mb-3" role="group">
+        <button class="btn btn-outline-primary" data-value="row">row</button>
+        <button class="btn btn-outline-primary" data-value="row-reverse">row-reverse</button>
+        <button class="btn btn-outline-primary" data-value="column">column</button>
+        <button class="btn btn-outline-primary" data-value="column-reverse">column-reverse</button>
+      </div>
+      <div class="d-flex flex-row border p-3 flex-direction-demo">
+        <div class="p-3 bg-light border">1</div>
+        <div class="p-3 bg-light border">2</div>
+        <div class="p-3 bg-light border">3</div>
+        <div class="p-3 bg-light border">4</div>
+      </div>
+    </section>
+    
+    <section id="flex-wrap" class="mb-4">
+      <h3>Flex Wrap</h3>
+      <div class="btn-group mb-3" role="group">
+        <button class="btn btn-outline-primary" data-value="nowrap">nowrap</button>
+        <button class="btn btn-outline-primary" data-value="wrap">wrap</button>
+        <button class="btn btn-outline-primary" data-value="wrap-reverse">wrap-reverse</button>
+      </div>
+      <div class="d-flex flex-wrap border p-3 flex-wrap-demo">
+        <div class="p-3 bg-light border">1</div>
+        <div class="p-3 bg-light border">2</div>
+        <div class="p-3 bg-light border">3</div>
+        <div class="p-3 bg-light border">4</div>
+        <div class="p-3 bg-light border">5</div>
+      </div>
+    </section>
+    
+    <section id="justify-content" class="mb-4">
+      <h3>Justify Content</h3>
+      <div class="btn-group mb-3" role="group">
+        <button class="btn btn-outline-primary" data-value="start">flex-start</button>
+        <button class="btn btn-outline-primary" data-value="end">flex-end</button>
+        <button class="btn btn-outline-primary" data-value="center">center</button>
+        <button class="btn btn-outline-primary" data-value="between">space-between</button>
+        <button class="btn btn-outline-primary" data-value="around">space-around</button>
+      </div>
+      <div class="d-flex justify-content-between border p-3 justify-content-demo">
+        <div class="p-3 bg-light border">1</div>
+        <div class="p-3 bg-light border">2</div>
+        <div class="p-3 bg-light border">3</div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="text-center p-3 bg-dark text-white">
+    <p>Authors:</p>
+    <ul class="list-inline">
+      <li class="list-inline-item">Maciej Rybak</li>
+      <li class="list-inline-item">Mateusz Rybak</li>
+      <li class="list-inline-item">Maurycy Januszek</li>
+      <li class="list-inline-item">Szymon Leśniak</li>
+      <li class="list-inline-item">Szymon Manijak</li>
+      <li class="list-inline-item">Patryk Pajerski</li>
+    </ul>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>>11</div>
       <div class="flex-item">12</div>
       <div class="flex-item">13</div>
       <div class="flex-item">14</div>
@@ -136,5 +301,5 @@
   </footer>
 
   <script src="script.js"></script>
-</body>
+</body> -->
 </html>

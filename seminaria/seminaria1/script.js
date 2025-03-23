@@ -1,11 +1,22 @@
 document.addEventListener("DOMContentLoaded",function(){
-  // flex direction
-  const flexDirectionButtons = document.querySelectorAll("#flex-direction button");
-  const div0 = document.querySelector(".flex-direction-demo");
-  
+  // Flex Direction
+  const flexDirectionButtons = document.querySelectorAll(".flex-direction-btn");
+  const flexContainer = document.querySelector("#flex-container");
+
   flexDirectionButtons.forEach(button => {
-    button.addEventListener("click", () => {      
-      div0.style.flexDirection = button.dataset.value;
+    button.addEventListener("click", () => {
+      flexContainer.classList.remove(
+        'flex-row',
+        'flex-row-reverse',
+        'flex-column',
+        'flex-column-reverse',
+        'flex-md-row'
+      );
+      
+      flexContainer.classList.add(`flex-${button.dataset.value}`);
+      
+      flexDirectionButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
     });
   });
 

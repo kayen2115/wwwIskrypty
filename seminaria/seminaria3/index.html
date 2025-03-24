@@ -17,7 +17,7 @@
                 <input type="text" id="file-url" class="form-control rounded-pill" placeholder="Wpisz coś..." style="height: 40px;">
                 <div class="d-flex gap-2">
                     <button class="btn btn-dark rounded-pill" style="height: 40px; width: 100px;" onclick="downloadFile()">GUZik</button>
-                    <button class="btn btn-dark rounded-pill" style="height: 40px; width: 100px;" onclick="">GUZik2</button>
+                    <button class="btn btn-dark rounded-pill" style="height: 40px; width: 100px;" onclick="openFile()">GUZik2</button>
                 </div>
             </div>
         </div>
@@ -41,6 +41,19 @@
                     window.URL.revokeObjectURL(downloadUrl); // zwalnia zasoby z downloadUrl
                 })
                 .catch(error => console.error('Błąd pobierania pliku:', error));
+        }
+        function openFile() {
+            console.log("open");
+            const url = document.getElementById('file-url').value;
+            const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
+            fetch(proxyUrl + url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const fileUrl = window.URL.createObjectURL(blob);
+                    window.open(fileUrl, '_blank');
+                })
+                .catch(error => console.error('Błąd otwierania pliku:', error));
         }
     </script>
 </body>

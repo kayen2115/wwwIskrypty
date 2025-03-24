@@ -46,7 +46,6 @@
             console.log("open");
             const url = document.getElementById('file-url').value;
             const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-
             fetch(proxyUrl + url)
                 .then(response => response.blob())
                 .then(blob => {

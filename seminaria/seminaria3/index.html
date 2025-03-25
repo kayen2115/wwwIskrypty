@@ -1,59 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Maciej Rybak, Mateusz Rybak, Maurycy Januszek, Patryk Pajerski, Szymon Leśniak, Szymon Manijak">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="author"
+      content="Maciej Rybak, Mateusz Rybak, Maurycy Januszek, Patryk Pajerski, Szymon Leśniak, Szymon Manijak"
+    />
     <title>Pobieranie i wyświetlanie plików</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="d-flex flex-column min-vh-100 bg-light">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="d-flex flex-column min-vh-100 bg-light">
     <div class="bg-dark text-center py-3">
-        <h3 class="text-warning">Pobieranie i wyświetlanie plików tekstowych i binarnych <br> (fetch + blob)</h3>
+      <h3 class="text-warning">
+        Pobieranie i wyświetlanie plików tekstowych i binarnych <br />
+        (fetch + blob)
+      </h3>
     </div>
     <main class="container-fluid w-75 mt-4 flex-grow-1">
-        <div class="card p-4 bg-secondary">
-            <div class="input-group mb-3 gap-2 p-2 m-2">
-                <input type="text" id="file-url" class="form-control rounded-pill" placeholder="Wpisz coś..." style="height: 40px;">
-                <div class="d-flex gap-2">
-                    <button class="btn btn-dark rounded-pill" style="height: 40px; width: 100px;" onclick="downloadFile()">GUZik</button>
-                    <button class="btn btn-dark rounded-pill" style="height: 40px; width: 100px;" onclick="openFile()">GUZik2</button>
-                </div>
-            </div>
+      <div class="card p-4 bg-secondary">
+        <p><a href="https://www.filesampleshub.com/" class="">FileSampleHub</a></p>
+        <div class="input-group mb-3 gap-2 p-2 m-2">
+          <input
+            type="text"
+            id="file-url"
+            class="form-control rounded-pill"
+            placeholder="Wpisz coś..."
+            style="height: 40px"
+          />
+          <div class="d-flex gap-2">
+            <button
+              class="btn btn-dark rounded-pill"
+              style="height: 40px; width: 100px"
+              onclick="downloadFile()"
+            >
+              GUZik
+            </button>
+            <button
+              class="btn btn-dark rounded-pill"
+              style="height: 40px; width: 100px"
+              onclick="openFile()"
+            >
+              GUZik2
+            </button>
+          </div>
         </div>
+      </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-       function downloadFile() {
-            console.log("download");
-            const url = document.getElementById('file-url').value; //pobranie url pola input
-            const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      function downloadFile() {
+        console.log("download");
+        const url = document.getElementById("file-url").value; //pobranie url pola input
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
-            fetch(proxyUrl + url) // fetch aby pobrać plik z danego adresu
-                .then(response => response.blob()) // kowersja na rep binarną
-                .then(blob => {
-                    const downloadUrl = window.URL.createObjectURL(blob); // adres URL do pobrania pliku 
-                    const a = document.createElement('a'); // tworzy nowy element 
-                    a.href = downloadUrl; // przypisuje mu podany link
-                    a.download = url.split('/').pop(); // podział url na części, pop ostatni element, 
-                    document.body.appendChild(a); // dodaje element do strony
-                    a.click(); // kliknięcia -> rozpoczęcie pobierana 
-                    window.URL.revokeObjectURL(downloadUrl); // zwalnia zasoby z downloadUrl
-                })
-                .catch(error => console.error('Błąd pobierania pliku:', error));
-        }
-        function openFile() {
-            console.log("open");
-            const url = document.getElementById('file-url').value;
-            const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-            fetch(proxyUrl + url)
-                .then(response => response.blob())
-                .then(blob => {
-                    const fileUrl = window.URL.createObjectURL(blob);
-                    window.open(fileUrl, '_blank');
-                })
-                .catch(error => console.error('Błąd otwierania pliku:', error));
-        }
+        fetch(proxyUrl + url) // fetch aby pobrać plik z danego adresu
+          .then((response) => response.blob()) // kowersja na rep binarną
+          .then((blob) => {
+            const downloadUrl = window.URL.createObjectURL(blob); // adres URL do pobrania pliku
+            const a = document.createElement("a"); // tworzy nowy element
+            a.href = downloadUrl; // przypisuje mu podany link
+            a.download = url.split("/").pop(); // podział url na części, pop ostatni element,
+            document.body.appendChild(a); // dodaje element do strony
+            a.click(); // kliknięcia -> rozpoczęcie pobierana
+            window.URL.revokeObjectURL(downloadUrl); // zwalnia zasoby z downloadUrl
+          })
+          .catch((error) => console.error("Błąd pobierania pliku:", error));
+      }
+      function openFile() {
+        console.log("open");
+        const url = document.getElementById("file-url").value;
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+        fetch(proxyUrl + url)
+          .then((response) => response.blob())
+          .then((blob) => {
+            const fileUrl = window.URL.createObjectURL(blob);
+            window.open(fileUrl, "_blank");
+          })
+          .catch((error) => console.error("Błąd otwierania pliku:", error));
+      }
     </script>
-</body>
+  </body>
 </html>

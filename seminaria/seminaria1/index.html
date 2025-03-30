@@ -47,6 +47,9 @@
         width: 100%;
       }
     }
+    .full:hover{
+      transform: scale(1.15);
+    }
   }
 
     </style> 
@@ -59,7 +62,7 @@
       <p class="lead">An interactive demonstration of CSS display: flex properties</p>
     </div>
   </div>
-  <div class="container">
+  <div class="container full mb-3" >
     <div class="row bg-light w-100 py-3 rounded shadow mx-auto">
       <div id="flex-direction" class="text-center">
         <h3 class="w-100 text-center fs-4 bg-primary text-white py-4 rounded">  
@@ -78,77 +81,92 @@
           </div>
         </div>
   
-        <ul id="flex-container" class="container d-flex flex-row flex-md-row flex-column fs-3 fs-sm-5">
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">1</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">2</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">3</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">4</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">5</li>
+        <ul id="flex-container" class=" d-flex flex-row flex-sm-row flex-column fs-3 fs-sm-5">
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-25">1</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-25">2</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-25">3</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-25">4</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-25">5</li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container full mb-3">
     <div class="row bg-light w-100 py-3 rounded shadow mx-auto">
       <div id="flex-direction" class="text-center">
         <h3 class="w-100 text-center fs-4 bg-primary text-white py-4 rounded">  
-          <b>Flex Direction</b>
+          <b>Flex Wrap</b>
         </h3>
-        <div id="flex-button" class="container flex-sm-row d-flex justify-content-around flex-row gap-2 mb-4 fs-2">
+        <div id="flex-button" class="container justify-content-around d-flex mb-2 fs-3">
           
-          <div class="row d-flex gap-2 ms-3 w-100" >
-            <button data-value="row" class="row h-50 flex-direction-btn list-group-item list-group-item-action border border-dark rounded">row</button>
-            <button data-value="row-reverse" class="row h-50 flex-direction-btn list-group-item list-group-item-action border border-dark rounded">row-reverse</button>
+          <div class="row d-flex ms-3 gap-2 w-100" >
+            <button data-value="wrap" class="row h-50 flex-wrap-btn list-group-item list-group-item-action border border-dark rounded">wrap</button>
+            <button data-value="nowrap" class="row h-50 flex-wrap-btn list-group-item list-group-item-action border border-dark rounded">nowrap</button>
           </div>
 
-          <div class="row d-flex gap-2 ms-3 w-100">
-            <button data-value="column" class="row h-50 flex-direction-btn list-group-item list-group-item-action border border-dark rounded">column</button>
-            <button data-value="column-reverse" class="row h-50 flex-direction-btn  list-group-item list-group-item-action border border-dark rounded">column-reverse</button>
+          <div class="row d-flex ms-3 mt-1 gap-2 w-100">
+            <button data-value="wrap-reverse" class="row h-100 flex-wrap-btn list-group-item list-group-item-action border border-dark rounded">wrap-reverse</button>
+            
           </div>
         </div>
   
-        <ul id="flex-container" class="container d-flex flex-row flex-md-row flex-column fs-3 fs-sm-5">
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">1</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">2</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">3</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">4</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">5</li>
+        <ul id="flex-wrapper" class="container d-flex flex-row  fs-3 fs-sm-5">
+          <li class="wrap list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">1</li>
+          <li class="wrap list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">2</li>
+          <li class="wrap list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">3</li>
+          <li class="wrap list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">4</li>
+          <li class="wrap list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">5</li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container full mb-3">
     <div class="row bg-light w-100 py-3 rounded shadow mx-auto">
       <div id="flex-direction" class="text-center">
         <h3 class="w-100 text-center fs-4 bg-primary text-white py-4 rounded">  
-          <b>Flex Direction</b>
+          <b>Justify-Content</b>
         </h3>
-        <div id="flex-button" class="container flex-sm-row d-flex justify-content-around flex-row gap-2 mb-4 fs-2">
+        <div id="flex-button" class="container flex-sm-row d-flex justify-content-around mb-3 flex-row fs-lg-5 fs-6 ">
           
-          <div class="row d-flex gap-2 ms-3 w-100" >
-            <button data-value="row" class="row h-50 flex-direction-btn list-group-item list-group-item-action border border-dark rounded">row</button>
-            <button data-value="row-reverse" class="row h-50 flex-direction-btn list-group-item list-group-item-action border border-dark rounded">row-reverse</button>
+          <div class="row gap-2 ms-3 w-100" >
+            <button data-value="justify-content-start" class="row h-50 justify-content-btn list-group-item border border-dark rounded">flex-start</button>
+            <button data-value="justify-content-end" class="row h-50 justify-content-btn list-group-item border border-dark rounded">flex-end</button>
           </div>
 
-          <div class="row d-flex gap-2 ms-3 w-100">
-            <button data-value="column" class="row h-50 flex-direction-btn list-group-item list-group-item-action border border-dark rounded">column</button>
-            <button data-value="column-reverse" class="row h-50 flex-direction-btn  list-group-item list-group-item-action border border-dark rounded">column-reverse</button>
+          <div class="row gap-2 ms-3 w-100 ">
+            <button data-value="justify-content-center" class="row h-50 justify-content-btn list-group-item border border-dark rounded">center</button>
+            <button data-value="justify-content-between" class="row h-50 justify-content-btn  list-group-item border border-dark rounded">space-between</button>
+          </div>
+
+          <div class="row gap-2 ms-3 w-100">
+            <button data-value="justify-content-around" class="row h-50 justify-content-btn list-group-item border border-dark rounded">space-around</button>
           </div>
         </div>
   
-        <ul id="flex-container" class="container d-flex flex-row flex-md-row flex-column fs-3 fs-sm-5">
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">1</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">2</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">3</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">4</li>
-          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light w-100">5</li>
+        <ul id="flex-justifier" class="container d-flex fs-3 fs-sm-5">
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light">1</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light">2</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light">3</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light">4</li>
+          <li class="list-group-item mx-1 my-2 border border-dark rounded bg-dark text-light">5</li>
         </ul>
       </div>
     </div>
   </div>
   </div>
-</div>
-
+<footer>
+  <ul id="authors-list">
+    <li>Maciej Rybak</li>
+    <li>Mateusz Rybak</li>
+    <li>Maurycy Januszek</li>
+    <li>Szymon Leśniak</li>
+    <li>Szymon Manijak</li>
+    <li>Patryk Pajerski</li>
+  </ul>
+</footer>
+</body>
+<script src="script.js"></script>
+</html>
 
   <!-- <header>
     <h1>Flexbox Showcase</h1>
@@ -356,4 +374,3 @@
 
   <script src="script.js"></script>
 </body> -->
-</html>

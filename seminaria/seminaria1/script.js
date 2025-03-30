@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded",function(){
         'flex-row-reverse',
         'flex-column',
         'flex-column-reverse',
-        'flex-md-row'
+        'flex-sm-row'
       );
       
       flexContainer.classList.add(`flex-${button.dataset.value}`);
@@ -19,26 +19,44 @@ document.addEventListener("DOMContentLoaded",function(){
       button.classList.add('active');
     });
   });
-
-  // flex wrap
-  const flexWrapButtons = document.querySelectorAll("#flex-wrap button");
-  const div1 = document.querySelector(".flex-wrap-demo");
+  // Flex Wrap
+  const flexWrapButtons = document.querySelectorAll(".flex-wrap-btn");
+  const flexWrapper = document.querySelector("#flex-wrapper");
 
   flexWrapButtons.forEach(button => {
     button.addEventListener("click", () => {
-      div1.style.flexWrap = button.dataset.value;
+      flexWrapper.classList.remove(
+        'flex-wrap',
+        'flex-wrap-reverse',
+        'flex-nowrap',
+      );
+      
+      flexWrapper.classList.add(`${button.dataset.value}`);
+      
+      flexWrapButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
     });
   });
+  const flexJustifyButtons = document.querySelectorAll(".justify-content-btn");
+  const flexJustifier = document.querySelector("#flex-justifier");
 
-  // justify content
-  const justifyContentButtons = document.querySelectorAll("#justify-content button");
-  const div2 = document.querySelector(".justify-content-demo");
-
-  justifyContentButtons.forEach(button => {
+  flexJustifyButtons.forEach(button => {
     button.addEventListener("click", () => {
-      div2.style.justifyContent = button.dataset.value;
+      flexJustifier.classList.remove(
+        'justify-content-start',
+        'justify-content-end',
+        'justify-content-center',
+        'justify-content-between',
+        'justify-content-around'
+      );
+      
+      flexJustifier.classList.add(`${button.dataset.value}`);
+      
+      flexJustifyButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
     });
   });
+  // justify content
 
   // align items
   const alignItemsButtons = document.querySelectorAll("#align-items button");

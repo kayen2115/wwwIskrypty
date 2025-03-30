@@ -1,56 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Maciej Rybak, Mateusz Rybak, Maurycy Januszek, Patryk Pajerski, Szymon Leśniak, Szymon Manijak">
-    <title>Lista użytkowników renderowana po stronie Client</title>
+<html lang="en" class="vh-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="author"
+      content="Maciej Rybak, Mateusz Rybak, Maurycy Januszek, Patryk Pajerski, Szymon Leśniak, Szymon Manijak"
+    />
+    <title>Renderowanie po stronie Client</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.gif" type="image/png">
-
+    <link rel="icon" href="/static/favicon.gif" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('/api/users')
-                .then(response => response.json())
-                .then(data => {
-                    const userList = document.getElementById('user-list');
-                    data.forEach(user => {
-                        const li = document.createElement('li');
-                        li.className = "list-group-item";
-                        li.textContent = `${user.name} - ${user.email}`;
-                        userList.appendChild(li);
-                    });
-                })
-                .catch(error => console.error('Błąd pobierania danych:', error));
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/api/users")
+          .then((response) => response.json())
+          .then((data) => {
+            const userList = document.getElementById("user-list");
+            data.forEach((user) => {
+              const li = document.createElement("li");
+              li.className = "list-group-item";
+              li.textContent = `${user.name} - ${user.email}`;
+              userList.appendChild(li);
+            });
+          })
+          .catch((error) => console.error("Błąd pobierania danych:", error));
+      });
     </script>
-</head>
-<body>
-
-
-    <nav class="navbar navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="https://cdn-icons-png.flaticon.com/512/9584/9584876.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                Lista użytkowników
-            </a>
+    <style>
+        .dropdown-item:hover {
+            background-color: gray;
+        }
+        .nav-item:hover {
+            background-color: gray; 
+        }
+        .dropdown-menu {
+    right: 0 !important;
+    left: auto !important;
+}
+    </style>
+  </head>
+  <body style="display: grid; grid-template-rows: auto 1fr; height: 100vh; margin: 0; background-color: lightgray;">
+    <header
+      class="d-flex  justify-content-center py-3 mb-4 bg-dark"
+    >
+      <a
+        href="/"
+        class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none"
+      >
+        <img
+          class="bi me-4 ms-3 rounded-circle"
+          width="40"
+          height="32"
+          src="/static/favicon.gif"
+          alt="Logo"
+        />
+        <span class="fs-3 fw-bold lh-1">Renderowanie danych - Client</span>
+      </a>
+      <nav class="navbar navbar-expand-md bg-dark">
+        <div class="container-fluid bg-dark">
+          <div class="dropdown d-md-none bg-dark">
+            <button
+              class="btn btn-secondary dropdown-toggle bg-dark"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <a
+                class="bi text-white text-decoration-none fw-bold"
+                width="40"
+                height="32"
+                alt="Menu"
+              >
+                Menu
+              </a>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-menu-dark"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li>
+                <a href="/index.html" class="dropdown-item fw-bold">Home</a>
+              </li>
+              <li>
+                <a
+                  href="/seminaria/seminaria1/index.html"
+                  class="dropdown-item fw-bold"
+                  >Display Flex</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/seminaria/seminaria2/index.html"
+                  class="dropdown-item fw-bold"
+                  >jQuery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/seminaria/seminaria3/index.html"
+                  class="dropdown-item fw-bold"
+                  >Fetch & Blob</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/seminaria/seminaria3/index.html"
+                  class="dropdown-item fw-bold"
+                  >Renderowanie Server</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/seminaria/seminaria3/index.html"
+                  class="dropdown-item fw-bold active"
+                  >Renderowanie Client</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/seminaria/seminaria5/index.htm"
+                  class="dropdown-item fw-bold"
+                  >Seminaria_5</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse navbar-collapse d-none d-md-block"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav nav nav-pills">
+              <li class="nav-item">
+                <a href="/index.html" class="nav-link fw-bold text-white"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="/seminaria/seminaria1/index.html"
+                  class="nav-link fw-bold text-white"
+                  >Display Flex</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="/seminaria/seminaria2/index.html"
+                  class="nav-link fw-bold text-white"
+                  >jQuery</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="/seminaria/seminaria3/index.html"
+                  class="nav-link fw-bold text-white"
+                  >Fetch & Blob</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle fw-bold text-white active" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Renderowanie danych
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item fw-bold text-white " href="/" >Server</a>
+                    <a class="dropdown-item fw-bold text-white active" href="/">Client</a>
+                </div>
+            </li>
+              <li class="nav-item">
+                <a
+                  href="/seminaria/seminaria5/index.htm"
+                  class="nav-link fw-bold text-white"
+                  >Seminaria_5</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    <div class="container mt-4">
-        <ul id="user-list" class="list-group"></ul>
+      </nav>
+    </header>
+    <div class="d-flex flex-column" style="flex-grow: 1;">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Lewa kolumna: Lista użytkowników -->
+          <div class="col-md-4">
+            <div class="text-center mb-3">
+              <span class="fs-3 fw-bold">Lista Użytkowników</span>
+            </div>
+            <ul id="user-list" class="list-group fw-bold border border-3 border-secondary text-center"></ul>
+          </div>
+          <!-- Prawa kolumna: Karta z cytatem -->
+          <div class="col-md-8 p-5">
+            <div class="card border border-3 border-secondary">
+              <div class="card-header h3">Renderowanie danych po stronie klienta.</div>
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p class="fw-bold">Klient renderuje dane za pomocą Fetch i API JSON.</p>
+                  <p> W tej wersji serwer udostępnia dane w formacie JSON, a klient (przeglądarka) ściąga dane za pomocą JavaScript i renderuje je na stronie.
+                        <p class="fw-bold">Wyjaśnienie:</p></p>
+                        <p> > Serwer udostępnia dane w formacie JSON pod adresem /api/users.</p>
+                        <p> > Klient (przeglądarka) używa fetch() do pobrania tych danych.</p>
+                        <p> > Po pobraniu danych JavaScript renderuje użytkowników na stronie (dynamiczne dodawanie elementów do DOM).</p>
+                        <p> > Klient jest odpowiedzialny za prezentację i interakcję z danymi.</p>
+                  </p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a class="px-2 text-white fw-bold text-decoration-none"
+            >Maciek Rybak</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="px-2 text-white fw-bold text-decoration-none"
+            >Mateusz Rybak</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="px-2 text-white fw-bold text-decoration-none"
+            >Maurycy januszek</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="px-2 text-white fw-bold text-decoration-none"
+            >Patryk Pajerski</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="px-2 text-white fw-bold text-decoration-none"
+            >Szymon Leśniak</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="px-2 text-white fw-bold text-decoration-none"
+            >Szymon Manijak</a
+          >
+        </li>
+      </ul>
+      <p class="text-center text-white fw-bold">
+        © 2025 WWW i języki skryptowe
+      </p>
+    </footer>
+  </body>
 </html>

@@ -17,7 +17,7 @@ users = [
 ]
 
 @app.route('/')
-def index():
+def home():
     return render_template('server.html', users=users)
 
 if __name__ == '__main__':
